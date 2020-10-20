@@ -8,6 +8,8 @@ namespace Fisa2_2
     {
         static void Main(string[] args)
         {
+            Console.Write("Introdu dimensiunile matricei: ");
+
             int n, m;
             string s = Console.ReadLine();
             string[] el = s.Split(" ");
@@ -15,6 +17,7 @@ namespace Fisa2_2
             n = int.Parse(el[0]);
             m = int.Parse(el[1]);
 
+            Console.WriteLine("Introdu matricea, cate o linie pe rand:");
 
             int[,] matrice = new int[n, m];
 
