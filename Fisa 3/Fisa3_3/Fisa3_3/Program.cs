@@ -11,7 +11,7 @@ namespace Fisa3_3
 
             int[][] matrice = new int[n][];
 
-            for(int i = 0; i < n; i++)
+            for (int i = 0; i < n; i++)
             {
                 Console.Write($"Introduceti lungimea liniei {i}: ");
                 int lungime = int.Parse(Console.ReadLine());
@@ -20,20 +20,20 @@ namespace Fisa3_3
                 string s = Console.ReadLine();
                 string[] el = s.Split(" ");
                 int indice = 0;
-                foreach(string element in el)
+                foreach (string element in el)
                 {
                     matrice[i][indice++] = int.Parse(element);
                 }
-            
+
             }
 
 
 
             int max = int.MinValue;
 
-            foreach(int[] a in matrice)
+            foreach (int[] a in matrice)
             {
-                foreach(int b in a)
+                foreach (int b in a)
                 {
                     if (b > max)
                         max = b;
