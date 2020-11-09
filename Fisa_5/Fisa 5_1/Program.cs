@@ -55,7 +55,7 @@ namespace Fisa_5
                 s = Console.ReadLine();
                 el = s.Split();
                 clasa[i].nume = el[0];
-                clasa[i].medie = int.Parse(el[1]);
+                clasa[i].medie = float.Parse(el[1]);
                 medieClasa += clasa[i].medie;
             }
             Console.WriteLine();
