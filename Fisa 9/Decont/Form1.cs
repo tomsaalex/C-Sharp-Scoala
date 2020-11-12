@@ -51,17 +51,18 @@ namespace Decont
 
         private void button1_Click(object sender, EventArgs e)
         {
-            float pret, consum, km, total;
-            pret = float.Parse(textBox1.Text);
-            consum = float.Parse(textBox2.Text);
-            km = float.Parse(textBox3.Text);
+            decimal pret, consum, km, total;
+            pret = decimal.Parse(textBox1.Text);
+            consum = decimal.Parse(textBox2.Text);
+            km = decimal.Parse(textBox3.Text);
             total = ((km * consum) / 100) * pret;
 
             if (radioButton2.Checked)
                 total = 2 * total;
 
-            textBox4.Text = total.ToString();
-            textBox6.Text = (total * float.Parse(textBox5.Text)).ToString();
+            decimal tb5Content = Math.Truncate(total * 100) / 100, tb6Content = Math.Truncate((total * 100 * decimal.Parse(textBox5.Text))) / 100;
+            textBox4.Text = String.Format($"{0:0.00}", tb5Content);
+            textBox6.Text = String.Format($"{0:0.00}", tb6Content);
             button2.Focus();
         }
 
