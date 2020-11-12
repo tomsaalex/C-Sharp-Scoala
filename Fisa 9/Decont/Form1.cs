@@ -16,6 +16,7 @@ namespace Decont
 {
     public partial class Form1 : Form
     {
+        public double rataDeConversie;
         public Form1()
         {
             InitializeComponent();
@@ -31,15 +32,15 @@ namespace Decont
 
         private void Init()
         {
+            rataDeConversie = Rates.Import();
             textBox1.Text = "0";
             textBox2.Text = "0";
             textBox3.Text = "0";
             textBox4.Text = "0";
-            textBox5.Text = "1.5";
+            textBox5.Text = rataDeConversie.ToString();
             radioButton1.Checked = true;
             radioButton2.Checked = false;
             textBox1.Focus();
-            MessageBox.Show($"{Rates.Import()}");
         }
 
         private void Form1_Load(object sender, EventArgs e)

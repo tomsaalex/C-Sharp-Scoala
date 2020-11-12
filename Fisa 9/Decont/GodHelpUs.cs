@@ -5,11 +5,10 @@ using Newtonsoft.Json;
 
 namespace ExchangeRate_API
 {
-
     static class Rates
     {
         public static API_Obj Test;
-        public static String Import()
+        public static double Import()
         {
             try
             {
@@ -20,13 +19,13 @@ namespace ExchangeRate_API
 
                     Test = JsonConvert.DeserializeObject<API_Obj>(json);
 
-                    return json;
+                    return Test.conversion_rates.EUR;
                 }
             }
             catch (Exception e)
             {
                 
-                return e.Message;
+                return 0;
             }
         }
     }
@@ -36,9 +35,12 @@ namespace ExchangeRate_API
         public string result { get; set; }
         public string documentation { get; set; }
         public string terms_of_use { get; set; }
-        public string time_zone { get; set; }
-        public string time_last_update { get; set; }
-        public string time_next_update { get; set; }
+        public string time_last_update_unix { get; set; }
+        public string time_last_update_utc { get; set; }
+        public string time_next_update_unix { get; set; }
+        public string time_next_update_utc { get; set; }
+        public string base_code { get; set; }
+
         public ConversionRate conversion_rates { get; set; }
     }
 
