@@ -61,8 +61,9 @@ namespace Decont
                 total = 2 * total;
 
             decimal tb5Content = Math.Truncate(total * 100) / 100, tb6Content = Math.Truncate((total * 100 * decimal.Parse(textBox5.Text))) / 100;
-            textBox4.Text = String.Format($"{0:0.00}", tb5Content);
-            textBox6.Text = String.Format($"{0:0.00}", tb6Content);
+            //decimal tb5Content = Math.Round(total, 2), tb6Content = Math.Round(total * decimal.Parse(textBox5.Text), 2);
+            textBox4.Text = ($"{tb5Content:N2}");
+            textBox6.Text = ($"{tb6Content:N2}");
             button2.Focus();
         }
 
