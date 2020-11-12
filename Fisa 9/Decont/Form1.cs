@@ -9,6 +9,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Web;
+using System.Xml.Serialization;
+using ExchangeRate_API;
 
 namespace Decont
 {
@@ -37,11 +39,13 @@ namespace Decont
             radioButton1.Checked = true;
             radioButton2.Checked = false;
             textBox1.Focus();
+            MessageBox.Show($"{Rates.Import()}");
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             Init();
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
