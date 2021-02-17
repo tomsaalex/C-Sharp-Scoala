@@ -61,5 +61,19 @@ namespace DB_Test_1
             //afisare
             dataGridView1.DataSource = dt;
         }
+
+        private void butonInserareLocatari_Click(object sender, EventArgs e)
+        {
+            string name = textBox1.Text;
+            string nr_bloc = textBox2.Text;
+            string nr_ap = textBox3.Text;
+            string angajat = textBox4.Text;
+
+            DataTable dt = new DataTable();
+            SqlCommand comanda = new SqlCommand($"INSERT INTO Locatari(nume, nr_bloc, nr_ap, angajat) VALUES('{name}', '{nr_bloc}', '{nr_ap}', '{angajat}')");
+            SqlDataAdapter da = new SqlDataAdapter(comanda);
+
+            comanda.ExecuteNonQuery();
+        }
     }
 }
